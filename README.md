@@ -7,11 +7,11 @@ Desarrollar una app web utilizando React que permita a los usuarios visualizar i
 
 - [X] Clonar el repo
 - [X] Instalar starter kit
-- [ ] Pintar listado de países
-- [ ] Filtrar según inputs:
+- [X] Pintar listado de países
+- [X] Filtrar según inputs:
     - Por continente (select)
     - Por pais
-- [ ] Obligatorio hacer el punto 1 y 2
+- [X] Obligatorio hacer el punto 1 y 2
 - [ ] (Bonus) Añadir nuevo pais
     - Rellenar un form
     - Funcionalidad

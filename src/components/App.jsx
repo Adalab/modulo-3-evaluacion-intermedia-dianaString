@@ -10,7 +10,10 @@ function App() {
 const LINK = "https://restcountries.com/v3.1/all?fields=name,capital,flag,continents,cca2";
 
 const [countries, setCountries] = useState ([])
+const [countryNameSearch, setCountryNameSearch] = useState ("")
+const [continentSearch, setContinentSearch] = useState ("")
 
+//fetch
 useEffect(() => {
   fetch(LINK)
     .then(response => response.json())
@@ -25,26 +28,64 @@ useEffect(() => {
           }
           return newObject
         })
-       console.log(cleanData)
+      // console.log(cleanData)
       setCountries(cleanData)
     })
 },[]);
+
+// handlers
+const handleChangeCountryName = (ev) => {
+  console.log(ev.target.value)
+  setCountryNameSearch(ev.target.value)
+}
+
+const handleChangeContinent = (ev) => {
+  console.log(ev.target.value)
+  setContinentSearch(ev.target.value)
+}
+
+// render
+const renderCountries = () => {
+  let filteredCountries = countries;
+    
+    return filteredCountries
+      .filter(country => country.name.toLowerCase().includes(countryNameSearch.toLowerCase()))
+      .filter(country => continentSearch !== 'all' ? country.continents.toLowerCase().includes(continentSearch.toLowerCase()) : true)
+      .map(country => (
+        <li key={country.id}>
+          <p className="img">{country.flag}</p>
+          <h2>{country.name}</h2>
+          <h3>{country.capital}</h3>
+          <h3>{country.continents}</h3>
+        </li>
+      ))
+}
+
  
-//html
+// html
   return (
     <>
       <h1>Country Info App</h1>
       <h2>Explore information about contries, capitals and flags. Add new countries and filter throught the list!</h2>
+      <h3>Filters</h3>
+      <h4>By Country</h4>
+      <input 
+        type="text"
+        name="country"
+        value={countryNameSearch}
+        onChange={handleChangeCountryName} />
+      <h4>By Continent</h4>
+      <select name="continent" value={continentSearch} onChange={handleChangeContinent}>
+        <option value="all" selected>All</option>
+        <option value="asia">Asia</option>
+        <option value="antarctica">Antarctica</option>
+        <option value="europe">Europe</option>
+        <option value="africa">Africa</option>
+        <option value="americas">Americas</option>
+        <option value="oceania">Oceania</option>
+      </select>
       <ul>
-        {countries.map(country => (
-          <li key={country.id}>
-            <img src={country.flag} alt={country.name} />
-            <p>{country.flag}</p>
-            <h2>{country.name}</h2>
-            <h3>{country.capital}</h3>
-            <h3>{country.continents}</h3>
-          </li>
-        ))}
+        {renderCountries()}
       </ul>
     </>
   )
