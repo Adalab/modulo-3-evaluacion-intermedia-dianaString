@@ -15,7 +15,7 @@ Desarrollar una app web utilizando React que permita a los usuarios visualizar i
 - [ ] (Bonus) Añadir nuevo pais
     - Rellenar un form
     - Funcionalidad
-- [ ] (Bonus) Eliminar pais
+- [X] (Bonus) Eliminar pais
     - Botón de borrar
     - Funcionalidad
 - [ ] (Bonus) Maquetar al gusto
