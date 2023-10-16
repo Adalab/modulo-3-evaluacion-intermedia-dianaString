@@ -12,7 +12,7 @@ Desarrollar una app web utilizando React que permita a los usuarios visualizar i
     - Por continente (select)
     - Por pais
 - [X] Obligatorio hacer el punto 1 y 2
-- [ ] (Bonus) Añadir nuevo pais
+- [X] (Bonus) Añadir nuevo pais
     - Rellenar un form
     - Funcionalidad
 - [X] (Bonus) Eliminar pais
@@ -23,4 +23,4 @@ Desarrollar una app web utilizando React que permita a los usuarios visualizar i
 ## Entrega:
 - [X] Esté publicado en GitHub Pages
 - [X] Colocar el enlace en el repo
-- [ ] Hasta las 11:10
+- [X] Hasta las 11:10
