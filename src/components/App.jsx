@@ -44,6 +44,11 @@ const handleChangeContinent = (ev) => {
   setContinentSearch(ev.target.value)
 }
 
+const handleDeleteCountry = (id) => {
+  const updatedCountries = countries.filter(country => country.id !== id);
+  setCountries(updatedCountries);
+};
+
 // render
 const renderCountries = () => {
   let filteredCountries = countries;
@@ -57,6 +62,7 @@ const renderCountries = () => {
           <h2>{country.name}</h2>
           <h3>{country.capital}</h3>
           <h3>{country.continents}</h3>
+          <button onClick={() => handleDeleteCountry(country.id)}>delete</button>
         </li>
       ))
 }
@@ -67,6 +73,7 @@ const renderCountries = () => {
     <>
       <h1>Country Info App</h1>
       <h2>Explore information about contries, capitals and flags. Add new countries and filter throught the list!</h2>
+
       <h3>Filters</h3>
       <h4>By Country</h4>
       <input 
@@ -75,13 +82,18 @@ const renderCountries = () => {
         value={countryNameSearch}
         onChange={handleChangeCountryName} />
       <h4>By Continent</h4>
+
+      {/* <h3>Add Country</h3>
+      <input type="text" placeholder="Country Name" value={newCountry.name} /> */}
+
       <select name="continent" value={continentSearch} onChange={handleChangeContinent}>
         <option value="all" selected>All</option>
         <option value="asia">Asia</option>
         <option value="antarctica">Antarctica</option>
         <option value="europe">Europe</option>
         <option value="africa">Africa</option>
-        <option value="americas">Americas</option>
+        <option value="north america">North America</option>
+        <option value="south america">South America</option>
         <option value="oceania">Oceania</option>
       </select>
       <ul>
