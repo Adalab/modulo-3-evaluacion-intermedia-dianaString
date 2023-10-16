@@ -21,6 +21,6 @@ Desarrollar una app web utilizando React que permita a los usuarios visualizar i
 - [ ] (Bonus) Maquetar al gusto
 
 ## Entrega:
-- [ ] Esté publicado en GitHub Pages
-- [ ] Colocar el enlace en el repo
+- [X] Esté publicado en GitHub Pages
+- [X] Colocar el enlace en el repo
 - [ ] Hasta las 11:10
